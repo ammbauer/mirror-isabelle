@@ -5,9 +5,9 @@ on:
       - master
 
 jobs:
-  linux:
-    name: Testi
-    runs-on: ubuntu-latest
+  isabelle_mac_os:
+    name: Building Isabelle/HOL
+    runs-on: macOS-latest
 
     steps:
     - uses: actions/checkout@v2
