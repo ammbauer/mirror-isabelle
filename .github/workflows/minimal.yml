@@ -15,8 +15,12 @@ jobs:
       run: wget "http://isabelle.in.tum.de/dist/Isabelle2020_macos.tar.gz"
     - name: Untar isabelle
       run: tar -xf "Isabelle2020_macos.tar.gz"
-    - name: Download isabelle
-      run: ls Isabelle2020.app/
+    - name: Build HOL-Library
+      run: Isabelle2020.app/Isabelle/bin/isabelle build -b -v HOL-Library
+    - uses: actions/upload-artifact@v2
+      with:
+        name: hol_library_heaps
+        path: ~/.isabelle/heaps
       #    - name: Run isabelle components -I
       #      run: ./bin/isabelle components -I
       #    - name: Run isabelle components -a
