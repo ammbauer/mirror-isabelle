@@ -11,13 +11,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run isabelle components -I
-      run: ./bin/isabelle components -I
-    - name: Run isabelle components -a
-      run: ./bin/isabelle components -a
-    - name: Build HOL
-      run: ./bin/isabelle build -b -v HOL
-    - uses: actions/upload-artifact@v2
-      with:
-        name: export .isabelle heaps dir
-        path: ~/.isabelle/heaps
+    - name: Download isabelle
+      run: wget "http://isabelle.in.tum.de/dist/Isabelle2020_macos.tar.gz"
+    - name: Untar isabelle
+      run: tar -xf "Isabelle2020_macos.tar.gz"
+    - name: Download isabelle
+      run: ls Isabelle2020.app/
+      #    - name: Run isabelle components -I
+      #      run: ./bin/isabelle components -I
+      #    - name: Run isabelle components -a
+      #      run: ./bin/isabelle components -a
+      #    - name: Build HOL
+      #      run: ./bin/isabelle build -b -v HOL
+      #    - uses: actions/upload-artifact@v2
+      #      with:
+      #        name: export .isabelle heaps dir
+      #        path: ~/.isabelle/heaps
