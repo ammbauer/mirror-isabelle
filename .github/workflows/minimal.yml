@@ -16,4 +16,8 @@ jobs:
     - name: Run isabelle components -a
       run: ./bin/isabelle components -a
     - name: Build HOL
-      run: ./bin/isabelle build -b HOL
+      run: ./bin/isabelle build -b -v HOL
+    - uses: actions/upload-artifact@v2
+      with:
+        name: heap stuff
+        path: .isabelle
