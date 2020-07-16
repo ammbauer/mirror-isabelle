@@ -10,5 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install packages
-      run: ls -la
+    - uses: actions/checkout@v2
+    - name: Run isabelle
+      run: ./bin/isabelle
