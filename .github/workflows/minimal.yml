@@ -9,5 +9,6 @@ jobs:
     name: Testi
     runs-on: ubuntu-latest
 
+    steps:
     - name: Install packages
       run: ls -la
