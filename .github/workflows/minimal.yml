@@ -19,5 +19,5 @@ jobs:
       run: ./bin/isabelle build -b -v HOL
     - uses: actions/upload-artifact@v2
       with:
-        name: export .isabelle/heaps dir
+        name: export .isabelle heaps dir
         path: ~/.isabelle/heaps
